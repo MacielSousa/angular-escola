@@ -1,0 +1,8 @@
+<h1>{{pessoa.nome}}</h1>
+<hr>
+<p [innerHTML]="pessoa.nome"></p>
+
+<h2>Usuario</h2>
+<ul>
+  <li *ngFor="let usuario of pessoa.usuarios">{{usuario | json}}</li>
+</ul>

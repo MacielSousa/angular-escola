@@ -1,0 +1,53 @@
+<h1>Funcionário - Cadastrar</h1>
+
+
+<fieldset class="form-group">
+  <legend>Tipo</legend>
+  <div class="form-check">
+    <label class="form-check-label" >
+      <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="Administrativo" [(ngModel)]="tipo_cad" checked>
+      Administrativo
+    </label>
+  </div>
+  <div class="form-check">
+  <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="Docente" [(ngModel)]="tipo_cad">
+      Docente
+    </label>
+  </div>
+  {{tipo_cad|json}}
+  
+
+<div class="form-group">
+  <label for="exampleSelect1">Pessoa</label>
+  <select class="form-control" id="exampleSelect1" [(ngModel)]="pessoa_cad">
+    <option *ngFor="let pessoa of pessoas">{{pessoa.nome}}</option>
+  </select>
+</div>
+
+{{pessoa_cad|json}}
+{{verificarPessoaId|json}}
+
+<div class="form-group">
+  <label for="exampleSelect1">Cargo</label>
+  <select class="form-control" id="exampleSelect1" [(ngModel)]="cargo_cad">
+    <option *ngFor="let cargo of cargos">{{cargo.nome}}</option>
+  </select>
+</div>
+
+{{cargo_cad|json}}
+{{verificarCargoId|json}}
+
+<div class="form-group">
+  <label for="exampleSelect2">Função</label>
+  <select multiple class="form-control" id="exampleSelect2" [(ngModel)]="funcao_cad">
+    <option *ngFor="let funcao of funcoes">{{funcao.nome}}</option>
+  </select>
+</div>
+
+{{funcao_cad|json}}
+{{verificarFuncaoId|json}}
+
+
+<button class="btn btn-primary" (click)="tipo()" >Salvar</button>
+

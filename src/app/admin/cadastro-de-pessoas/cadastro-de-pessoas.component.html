@@ -1,0 +1,28 @@
+<h1>Pessoas - Cadastro</h1>
+<hr>
+<div class="alert alert-success" *ngIf="cadastro_ok">
+  <strong>Cadastro realizado com sucesso! </strong>
+  Continue cadastrando outra ou <a routerLink="/admin/pessoas">volte para a lista de pessoas</a>
+</div>
+<div class="alert alert-success" *ngIf="atualizar_ok">
+  <strong>Atualização realizada com sucesso! </strong>
+  Continue editando ou <a routerLink="/admin/pessoas">volte para a lista de pessoas</a>
+</div>
+<div class="alert alert-danger" *ngIf="cadastro_erro">
+  <strong>Opa!</strong> Aconteceu um erro ao tentar fazer o cadastro. Aguarde alguns instantes e tente novamente.
+</div>
+<div class="alert alert-danger" *ngIf="atualizar_erro">
+  <strong>Opa!</strong> Aconteceu um erro ao tentar atualizar os dados da pessoa.
+  Aguarde alguns instantes e tente novamente.
+</div>
+<form #cadastro="ngForm" (submit)="salvar()">
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" class="form-control" [(ngModel)]="nome" required>
+  </div>
+  <div class="form-group">
+    <label for="dtNascimento">Data de Nascimento</label>
+    <input type="text" name="dtNascimento" id="dtNascimento" class="form-control" [(ngModel)]="dtNascimento" required>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!cadastro.valid">Salvar</button>
+</form>

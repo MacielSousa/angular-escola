@@ -43,7 +43,7 @@ export class CadastroDeFuncionarioComponent implements OnInit {
         this.verificarCargoId = this.cargoId();
         this.funcionariosService.addAdministrativo(this.verificarPessoaId, this.verificarCargoId);
         for (var i = 0; i < this.funcao_cad.length; i++) {
-          this.funcionariosService.addFuncionarioCargoFuncoes(this.verificarPessoaId, this.verificarCargoId,this.funcaoId(this.funcao_cad[i]))
+          this.funcionariosService.addFuncionarioCargoFuncoes(this.verificarPessoaId, this.verificarCargoId, this.funcaoId(this.funcao_cad[i]))
         }
         console.log("É um Array de Função ok!");
       }
@@ -51,7 +51,8 @@ export class CadastroDeFuncionarioComponent implements OnInit {
         this.verificarCargoId = this.cargoId();
         this.verificarPessoaId = this.pessoaId();
         this.funcionariosService.addAdministrativo(this.verificarPessoaId, this.verificarCargoId);
-        this.funcionariosService.addFuncionarioCargoFuncoes(this.verificarPessoaId, this.verificarCargoId,this.funcaoId(this.funcao_cad));
+        this.funcionariosService.addFuncionarioCargoFuncoes(this.verificarPessoaId, this.verificarCargoId, this.funcaoId(this.funcao_cad));
+        this.verificarFuncaoId = this.funcaoId(this.funcao_cad)
       }
 
     }
@@ -61,7 +62,7 @@ export class CadastroDeFuncionarioComponent implements OnInit {
         this.verificarCargoId = this.cargoId();
         this.funcionariosService.addDocente(this.verificarPessoaId, this.verificarCargoId);
         for (var i = 0; i < this.funcao_cad.length; i++) {
-          this.funcionariosService.addFuncionarioCargoFuncoes(this.verificarPessoaId, this.verificarCargoId,this.funcaoId(this.funcao_cad[i]))
+          this.funcionariosService.addFuncionarioCargoFuncoes(this.verificarPessoaId, this.verificarCargoId, this.funcaoId(this.funcao_cad[i]))
         }
         console.log("É um Array de Função ok!");
       }
@@ -69,7 +70,8 @@ export class CadastroDeFuncionarioComponent implements OnInit {
         this.verificarCargoId = this.cargoId();
         this.verificarPessoaId = this.pessoaId();
         this.funcionariosService.addDocente(this.verificarPessoaId, this.verificarCargoId);
-        this.funcionariosService.addFuncionarioCargoFuncoes(this.verificarPessoaId, this.verificarCargoId,this.funcaoId(this.funcao_cad));
+        this.funcionariosService.addFuncionarioCargoFuncoes(this.verificarPessoaId, this.verificarCargoId, this.funcaoId(this.funcao_cad));
+        this.verificarFuncaoId = this.funcaoId(this.funcao_cad)
       }
     }
   }

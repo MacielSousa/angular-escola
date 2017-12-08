@@ -31,7 +31,7 @@
 <div class="form-group">
   <label for="exampleSelect1">Cargo</label>
   <select class="form-control" id="exampleSelect1" [(ngModel)]="cargo_cad">
-    <option *ngFor="let cargo of cargos">{{cargo.nome}}</option>
+    <option *ngFor="let cargo of cargos">{{cargo|json}</option>
   </select>
 </div>
 
@@ -41,7 +41,7 @@
 <div class="form-group">
   <label for="exampleSelect2">Função</label>
   <select multiple class="form-control" id="exampleSelect2" [(ngModel)]="funcao_cad">
-    <option *ngFor="let funcao of funcoes">{{funcao.nome}}</option>
+    <option *ngFor="let funcao of funcoes">{{funcao|json}}</option>
   </select>
 </div>
 

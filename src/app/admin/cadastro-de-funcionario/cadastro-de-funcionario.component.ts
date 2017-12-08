@@ -37,11 +37,17 @@ export class CadastroDeFuncionarioComponent implements OnInit {
   }
 
   tipo() {
+    console.log(this.tipo_cad);
+    
     if (this.tipo_cad == "Administrativo") {
       if (this.verificar()) {
+        
         this.verificarPessoaId = this.pessoaId();
         this.verificarCargoId = this.cargoId();
-        this.funcionariosService.addAdministrativo(this.verificarPessoaId, this.verificarCargoId);
+        console.log();
+        
+        this.funcionariosService.addAdministrativo(this.verificarPessoaId, this.verificarCargoId)
+          .subscribe(administrativo => console.log(administrativo));
         for (var i = 0; i < this.funcao_cad.length; i++) {
           this.funcionariosService.addFuncionarioCargoFuncoes(this.verificarPessoaId, this.verificarCargoId, this.funcaoId(this.funcao_cad[i]))
         }
@@ -50,7 +56,8 @@ export class CadastroDeFuncionarioComponent implements OnInit {
       else {
         this.verificarCargoId = this.cargoId();
         this.verificarPessoaId = this.pessoaId();
-        this.funcionariosService.addAdministrativo(this.verificarPessoaId, this.verificarCargoId);
+        this.funcionariosService.addAdministrativo(this.verificarPessoaId, this.verificarCargoId)
+        .subscribe(administrativo => console.log(administrativo));
         this.funcionariosService.addFuncionarioCargoFuncoes(this.verificarPessoaId, this.verificarCargoId, this.funcaoId(this.funcao_cad));
         this.verificarFuncaoId = this.funcaoId(this.funcao_cad)
       }

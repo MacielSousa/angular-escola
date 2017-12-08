@@ -22,17 +22,17 @@ export class FuncionariosService{
         return this.http.get<any[]>(this.API_URL + '/funcoes');
     }
 
-    addDocente(pessoaId: string, cargoId: string): Observable<any> {
+    addDocente(pessoaId: number, cargoId: number): Observable<any> {
         const docente = {pessoaId: pessoaId, cargoId: cargoId};
         return this.http.post(this.API_URL + '/docentes', docente);
     }
 
-    addAdministrativo(pessoaId: string, cargoId: string): Observable<any> {
+    addAdministrativo(pessoaId: number, cargoId: number): Observable<any> {
         const administrativo = {pessoaId: pessoaId, cargoId: cargoId};
         return this.http.post(this.API_URL + '/administrativos', administrativo);
     }
 
-    addFuncionarioCargoFuncoes(pessoaId: string, cargoId: string, funcaoId: string ): Observable<any> {
+    addFuncionarioCargoFuncoes(pessoaId: number, cargoId: number, funcaoId: number ): Observable<any> {
         const funcionarioCargoFuncao = {pessoaId: pessoaId, cargoId: cargoId, funcaoId: funcaoId};
         return this.http.post(this.API_URL + '/funcionarioCargoFuncoes', funcionarioCargoFuncao);
     }
